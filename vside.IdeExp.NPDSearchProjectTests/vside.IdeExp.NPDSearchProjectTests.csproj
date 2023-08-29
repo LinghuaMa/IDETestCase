@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.props" Condition="Exists('..\packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.props')" />
+  <Import Project="..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props" Condition="Exists('..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7C2BF06-02DF-43E0-A491-ABB9492CDF35}</ProjectGuid>
+    <ProjectGuid>{3C87D5A3-FC8C-41F5-906E-D6E20881AF43}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IDEXTestDemo</RootNamespace>
-    <AssemblyName>IDEXTestDemo</AssemblyName>
+    <RootNamespace>vside.IdeExp.NPDSearchProjectTests</RootNamespace>
+    <AssemblyName>vside.IdeExp.NPDSearchProjectTests</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -45,80 +45,74 @@
     <Reference Include="FluentAssertions.Core">
       <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\FluentAssertions.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Test.Apex.ElevateClient">
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.ElevateClient.exe</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Test.Apex.Framework">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.Framework.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.OsIntegration">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.OsIntegration.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.OsIntegration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.RemoteCodeInjector">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.RemoteCodeInjector.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.RemoteCodeInjector.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.RemoteCodeInjector.arm64">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.RemoteCodeInjector.arm64.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.RemoteCodeInjector.arm64.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.RemoteCodeInjector.x64">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.RemoteCodeInjector.x64.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.RemoteCodeInjector.x64.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.SourceControlIntegration">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.SourceControlIntegration.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.SourceControlIntegration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.TeamFoundation">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.TeamFoundation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.TeamFoundation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.VisualStudio">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.VisualStudio.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.VisualStudio.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.VisualStudio.Hosting">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.VisualStudio.Hosting.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.VisualStudio.Hosting.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.VisualStudio.Internal">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.VisualStudio.Internal.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.VisualStudio.Internal.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Test.Apex.VSTestIntegration">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Microsoft.Test.Apex.VSTestIntegration.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.Test.Apex.VSTestIntegration.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.UI.Internal.Apex, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.TestPlatform.AdapterUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.TestPlatform.AdapterUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.UI.Internal.Apex">
       <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.VisualStudio.Shell.UI.Internal.Apex.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.TemplateProviders.Implementation, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Microsoft.VisualStudio.TemplateProviders.Implementation">
       <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Microsoft.VisualStudio.TemplateProviders.Implementation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MSTest.TestFramework.3.0.2\lib\net462\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+      <HintPath>..\packages\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MSTest.TestFramework.3.0.2\lib\net462\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+      <HintPath>..\packages\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Omni.Common, Version=17.0.0.0, Culture=neutral, PublicKeyToken=0825ed996f7f8b30, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Omni.Common.dll</HintPath>
+    <Reference Include="Omni.Common.VS">
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Omni.Common.VS.dll</HintPath>
     </Reference>
-    <Reference Include="Omni.Common.VS, Version=17.0.0.0, Culture=neutral, PublicKeyToken=0825ed996f7f8b30, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Omni.Common.VS.dll</HintPath>
+    <Reference Include="Omni.Logging.Extended">
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\Omni.Logging.Extended.dll</HintPath>
     </Reference>
-    <Reference Include="Omni.Log, Version=17.0.0.0, Culture=neutral, PublicKeyToken=0825ed996f7f8b30, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Omni.Log.dll</HintPath>
-    </Reference>
-    <Reference Include="Omni.Logging.Extended, Version=17.0.0.0, Culture=neutral, PublicKeyToken=0825ed996f7f8b30, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\Omni.Logging.Extended.dll</HintPath>
-    </Reference>
-    <Reference Include="RemoteInjectorBootstrapper64">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\RemoteInjectorBootstrapper64.exe</HintPath>
-    </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="RemoteInjectorBootstrapperArm64">
-      <HintPath>..\..\..\..\..\..\ApexDlls\vside.IdeExp.GetToCodeTests\RemoteInjectorBootstrapperArm64.exe</HintPath>
+      <HintPath>..\..\..\..\..\..\..\ApexDlls\vside.IdeExp.NewProjectDialogTests\RemoteInjectorBootstrapperArm64.exe</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests.cs" />
+    <Compile Include="SearchProjectInNewProjectDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -130,8 +124,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.props'))" />
-    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.targets'))" />
+    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets'))" />
   </Target>
-  <Import Project="..\packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.targets')" />
+  <Import Project="..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets')" />
 </Project>
