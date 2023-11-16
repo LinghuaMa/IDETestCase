@@ -8,6 +8,7 @@ using System.IO;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Threading;
+
 using FluentAssertions;
 using Microsoft.Test.Apex.VisualStudio.Shell;
 using Microsoft.VisualStudio.PlatformUI.Apex.NewProjectDialog;
@@ -23,7 +24,7 @@ namespace CreateNewProjectFromNPD
         private List<string> foldersToCleanUp = new List<string>();
         private readonly VsSafeFileNameStringGenerator stringGenerator = new VsSafeFileNameStringGenerator() { MinLength = 3, MaxLength = 10 };
 
-        string[] templateId = { "Microsoft.Common.Console``C#", "Microsoft.Common.Console``VB", "Microsoft.Common.WinForms``C#", "Microsoft.Common.WinForms``VB", "Microsoft.Common.WPF``C#", "Microsoft.Web.RazorPages``C#", "AzureFunctions``C#", "Microsoft.CSharp.ConsoleApplication", "Microsoft.VisualBasic.Windows.WpfApplication"};
+        string[] templateId = { "Microsoft.Common.Console``C#", "Microsoft.Common.Console``VB", "Microsoft.Common.WinForms``C#", "Microsoft.Common.WinForms``VB", "Microsoft.Common.WPF``C#", "Microsoft.Web.RazorPages``C#", "AzureFunctions``C#", "Microsoft.CSharp.ConsoleApplication", "Microsoft.VisualBasic.Windows.WpfApplication" };
         private static TimeSpan defaultOpenSolutionTimeout = TimeSpan.FromSeconds(2);
 
         [TestInitialize]
@@ -46,7 +47,7 @@ namespace CreateNewProjectFromNPD
                 NewProjectDialogTestExtension newProjectDialogTestExtension = this.newProjectDialogTestService.GetExtension();
                 CreateProjectDialogTestExtension createProjectDialogTestExtension = newProjectDialogTestExtension.InvokeNewProjectDialog();
                 createProjectDialogTestExtension.Verify.ProjectCreationDialogVisibilityIs(true).Should().BeTrue();
-
+                //createProjectDialogTestExtension.SearchTemplates();
                 if (!createProjectDialogTestExtension.TrySelectTemplateWithId(id))
                     return;
 
@@ -72,6 +73,39 @@ namespace CreateNewProjectFromNPD
                 this.VerifySolutionIsLoaded(Path.Combine(projectLocation, solutionName, solutionName + ".sln"));
 
                 this.VisualStudio.ObjectModel.Solution.SaveAndClose();
+            }
+        }
+
+        [TestMethod]
+        [Owner("IDE Experience")]
+        public void CreateBlankSolution()
+        {
+            string projectLocation = Environment.ExpandEnvironmentVariables($@"%USERPROFILE%\source\repos\{stringGenerator.Generate()}");
+            string solutionName = stringGenerator.Generate();
+            using (Scope.Enter("[Blank Solution] NPD configuration page behavior when \"Create new project\""))
+            {
+                NewProjectDialogTestExtension newProjectDialogTestExtension = this.newProjectDialogTestService.GetExtension();
+                CreateProjectDialogTestExtension createProjectDialogTestExtension = newProjectDialogTestExtension.InvokeNewProjectDialog();
+                createProjectDialogTestExtension.Verify.ProjectCreationDialogVisibilityIs(true).Should().BeTrue();
+                createProjectDialogTestExtension.SearchTemplates("Blank Solution");
+                createProjectDialogTestExtension.GetTemplateShownCount().Should().Be(11);
+                ConfigProjectDialogTestExtension configTestExtension = createProjectDialogTestExtension.NavigateToConfigProjectPage();
+                configTestExtension.Verify.ProjectConfigurationDialogVisibilityIs(true).Should().BeTrue();
+
+                // Assign valid SolutionName
+                configTestExtension.SolutionName = solutionName;
+                var aaa= configTestExtension.SolutionName;
+                // Verify that does not show "Project name" in config page
+                configTestExtension.Verify.IsNull(configTestExtension.ProjectName);
+                // Assign valid Location
+                configTestExtension.Location = projectLocation;
+                configTestExtension.FinishConfiguration();
+                this.VerifySolutionIsLoaded(Path.Combine(projectLocation, "Solution1", solutionName + ".sln"));
+                this.VisualStudio.ObjectModel.Solution.SaveAndClose();
+            }
+            using (Scope.Enter("[Project] NPD configuration page behavior"))
+            {
+                
             }
         }
 
