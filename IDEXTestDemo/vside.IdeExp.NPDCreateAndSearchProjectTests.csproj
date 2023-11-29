@@ -164,9 +164,11 @@
     <Compile Include="LazyDocLoad.cs" />
     <Compile Include="NewProjectTests.cs" />
     <Compile Include="OpenLargeSolution.cs" />
+    <Compile Include="RemoteControlPackageTest.cs" />
     <Compile Include="RestoreDocumentsTest.cs" />
     <Compile Include="SignoffCases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartPageEnabledUserScenarioTests.cs" />
     <Compile Include="StartWindowEnabledUserScenarioTests.cs" />
     <Compile Include="UserScenarioTests.cs" />
   </ItemGroup>
